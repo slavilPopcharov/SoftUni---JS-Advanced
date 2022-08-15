@@ -7,12 +7,11 @@ function vol() {
 }
 
 function solve(area, vol, input) {
-  let result = []
   let data = JSON.parse(input);
-  data.map((e) => {
+  let result = data.map((e) => {
     let areaRes = area.call(e);
     let volRes = vol.call(e);
-    result.push({area: areaRes, volume: volRes}); 
+    return {area: areaRes, volume: volRes}; 
   });
  return result;
 }
